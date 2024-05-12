@@ -43,7 +43,7 @@ class FilaDePrioridades:
         for prioridade, dado in sorted(self.fila):
             print(dado)
 
-    def concluir_tarefa(self, tarefa):
+    def tarefa_concluida(self, tarefa):
         for i, (p, dados) in enumerate(self.fila):
             if dados == tarefa:
                 del self.fila[i]
@@ -79,8 +79,12 @@ fila_prioridades.tarefas_pendentes()
 
 print("===================================")
 
-print(fila_prioridades.concluir_tarefa("Jogar LOL"))
+print(fila_prioridades.tarefa_concluida("Jogar LOL"))
 
+
+print("===================================")
+
+print(fila_prioridades.tarefa_concluida("Jogar LOL"))
 
 
 print("===================================")
