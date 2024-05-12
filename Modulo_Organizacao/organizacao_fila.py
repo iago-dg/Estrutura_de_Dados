@@ -3,6 +3,8 @@ import heapq
 class FilaDePrioridades:
     def __init__(self):
         self.fila = []
+        self.tarefas_pendente = []
+        self.tarefas_concluidas = []
         self.prioridades = {1: "Prioridade Crítica", 
                             2: "Prioridade Alta", 
                             3: "Prioridade Média", 
@@ -37,6 +39,17 @@ class FilaDePrioridades:
         for dado in tarefas:
             print(dado)
 
+    def tarefas_pendentes(self):
+        for prioridade, dado in sorted(self.fila):
+            print(dado)
+
+    def concluir_tarefa(self, tarefa):
+        for i, (p, dados) in enumerate(self.fila):
+            if dados == tarefa:
+                del self.fila[i]
+                return "A tarefa foi concluída!"
+        return "Tarefa não encontrada."
+
 fila_prioridades = FilaDePrioridades()
 fila_prioridades.enfileirar("Jogar CS", 1)  # Prioridade Crítica
 fila_prioridades.enfileirar("Jogar LOL", 2) # Prioridade Alta
@@ -59,4 +72,20 @@ print("\nTarefas com Prioridade Alta (2):")
 tarefas_altas = fila_prioridades.listar_tarefas(2)
 fila_prioridades.imprimir_tarefas(tarefas_altas)
 
+
+print("===================================")
+
+fila_prioridades.tarefas_pendentes()
+
+print("===================================")
+
+print(fila_prioridades.concluir_tarefa("Jogar LOL"))
+
+
+
+print("===================================")
+
+fila_prioridades.tarefas_pendentes()
+
+print("===================================")
 
