@@ -11,7 +11,7 @@ O Gerenciador de Tarefas com Tkinter é um aplicativo simples para gerenciar sua
 
 ## Interface do Aplicativo
 
-![Interface do Aplicativo](screenshot.png)
+![Interface do Aplicativo]('imagem/tkinter.png')
 
 ### Como Usar
 
